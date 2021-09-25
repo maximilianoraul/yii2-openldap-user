@@ -1,0 +1,21 @@
+{
+    "name": "maximilianoraul/yii2-openldap-user",
+    "description": "Enable the use of OpenLDAP to authenticate users",
+    "type": "yii2-extension",
+    "keywords": ["auth"," openldap"," yii2"],
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Maximiliano Raul",
+            "email": "maximilianoraul@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "MaximilianoRaul\\OpenLdap\\": "src/"
+        }
+    }
+}
