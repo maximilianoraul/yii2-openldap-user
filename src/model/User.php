@@ -1,6 +1,6 @@
 <?php
 
-namespace MaximilianoRaul\OpenLDAP\model;
+namespace MaximilianoRaul\OpenLdap\model;
 
 use MaximilianoRaul\OpenLdap\Openldap;
 use Yii;
