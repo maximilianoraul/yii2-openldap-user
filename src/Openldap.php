@@ -66,10 +66,10 @@ class Openldap extends Component
      */
     public function searchUser(string $user): string
     {
-        $conn = $this->getConnection();
+        $this->getConnection();
 
-        $result = ldap_search($conn, $this->baseDn, "(uid={$user})", self::SEARCH_ATTR);
-        $entries = ldap_get_entries($conn, $result);
+        $result = ldap_search($this->conn, $this->baseDn, "(uid={$user})", self::SEARCH_ATTR);
+        $entries = ldap_get_entries($this->conn, $result);
 
         if ($entries["count"] > 0) {
             // Si hay resultados en la búsqueda
@@ -92,7 +92,7 @@ class Openldap extends Component
      */
     public function validatePassword($user, $pass): bool
     {
-        $conn = $this->getConnection();
-        return ldap_bind($conn, "uid={$user},{$this->baseDn}", $pass);
+        $this->getConnection();
+        return ldap_bind($this->conn, "uid={$user},{$this->baseDn}", $pass);
     }
 }
