@@ -10,7 +10,7 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-composer require --prefer-dist maximilianoraul/yii2-openldap-user "*"
+composer require maximilianoraul/yii2-openldap-user "*"
 ```
 
 or add
@@ -32,13 +32,13 @@ Add in your config (`config/web.php` for the basic app):
     'components' => [
         //...
         'user' => [
-            'identityClass' => 'MaximilianoRaul\OpenLDAP\model\User',
+            'identityClass' => 'MaximilianoRaul\OpenLdap\model\User',
         ],
         //...
         'openldap' => [
             'class' => 'MaximilianoRaul\OpenLdap\Openldap',
             'host' => "ldap.example.int",
-            'protocol' => "ldap://",
+            'protocol' => "ldap",
             'port' => 389,
             'baseDn' => "dc=example,dc=int",
             'ldapVersion' => 3,

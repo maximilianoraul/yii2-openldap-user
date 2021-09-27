@@ -2,7 +2,6 @@
 
 namespace MaximilianoRaul\OpenLdap\model;
 
-use MaximilianoRaul\OpenLdap\Openldap;
 use Yii;
 use yii\base\BaseObject;
 use yii\web\IdentityInterface;
@@ -20,8 +19,7 @@ class User extends BaseObject implements IdentityInterface
      */
     public static function findIdentity($id)
     {
-        $openldap = new Openldap(); 
-        return new User(['id' => $id, 'username' => $openldap->searchUser($id)]);
+        return new User(['id' => $id, 'username' => Yii::$app->openldap->searchUser($id)]);
     }
 
     /**
@@ -75,7 +73,6 @@ class User extends BaseObject implements IdentityInterface
      */
     public function validatePassword($password)
     {
-        $openldap = new Openldap();
-        return $openldap->validatePassword($this->username, $password);
+        return Yii::$app->openldap->validatePassword($this->username, $password);
     }
 }

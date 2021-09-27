@@ -2,7 +2,7 @@
 
 namespace MaximilianoRaul\OpenLdap;
 
-use MaximilianoRaul\OpenLDAP\exception\OpenLdapExcepcion;
+use MaximilianoRaul\OpenLdap\exception\OpenLdapExcepcion;
 use yii\base\Component;
 
 
@@ -17,7 +17,7 @@ class Openldap extends Component
     private $conn = false;
 
     /**
-     * Server protocol. Ej: ldap://
+     * Server protocol. Ej: ldap
      */
     public $protocol;
 
